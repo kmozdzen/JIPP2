@@ -80,7 +80,7 @@
 				</MakeCommands>
 			</Target>
 		</Build>
-		<Unit filename="/cygdrive/c/Users/Kubinio/CLionProjects/zadanie.lab2/main.cpp">
+		<Unit filename="/cygdrive/c/Users/Kubinio/CLionProjects/zadanie.lab2/simpleCalc/src/main.cpp">
 			<Option target="zadanie_lab2"/>
 		</Unit>
 		<Unit filename="/cygdrive/c/Users/Kubinio/CLionProjects/zadanie.lab2/CMakeLists.txt">
