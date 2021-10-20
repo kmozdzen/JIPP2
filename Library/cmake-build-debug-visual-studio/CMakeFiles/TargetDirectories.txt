@@ -1,8 +1,0 @@
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/firstLib/CMakeFiles/edit_cache.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/firstLib/CMakeFiles/firstLib.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/firstLib/CMakeFiles/rebuild_cache.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/firstLibCall/CMakeFiles/edit_cache.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/firstLibCall/CMakeFiles/firstlibcall.dir
-C:/Users/Kubinio/CLionProjects/untitled3/JIPP2/Library/cmake-build-debug-visual-studio/firstLibCall/CMakeFiles/rebuild_cache.dir
