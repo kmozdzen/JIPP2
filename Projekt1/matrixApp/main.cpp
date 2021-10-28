@@ -1,87 +1,615 @@
 #include <iostream>
 #include <string>
 #include "matrixLib.h"
+#include "matrix.h"
+#include "help.h"
 using namespace std;
-
-void show_matrix(int **M, int number_of_rows, int number_of_columns){
-    for(int i = 0; i < number_of_rows; i++){
-        for(int j = 0; j < number_of_columns; j++){
-            cout << M[i][j] << " ";
-        }
-        cout << endl;
-    }
-}
-
-void fill_matrix(int **M, int number_of_rows, int number_of_columns){
-    int k = 0;
-    for(int i = 0; i < number_of_rows; i++){
-        for(int j = 0; j < number_of_columns; j++){
-            M[i][j] = ++k;
-        }
-    }
-}
-
-bool compare(char w1[], char w2[]){
-   int i = 0;
-   while(w1[i] != '\0' || w2[i] != '\0'){
-       if(w1[i] != w2[i]){
-           break;
-       }
-       i++;
-       if(w1[i] == '\0' && w2[i] == '\0'){
-           return true;
-           break;
-       }
-   }
-    return false;
-}
-
+enum TYPE {INT, DOUBLE};
 
 int main(int arc, char *argv[]){
-    srand (time(NULL));
-
-    int number_of_columns = 3;
-    int number_of_rows = 2;
-
-    int **A;
-    A = new int *[number_of_rows];
-    for(int i = 0; i < number_of_rows; i++) {
-        A[i] = new int[number_of_columns];
-    }
-
-    int **B;
-    B = new int *[number_of_rows];
-    for(int i = 0; i < number_of_rows; i++) {
-        B[i] = new int[number_of_columns];
-    }
-
-    fill_matrix(A, number_of_rows, number_of_columns);
-    show_matrix(A, number_of_rows, number_of_columns);
-    cout <<endl;
-
-    fill_matrix(B, number_of_rows, number_of_columns);
-    show_matrix(B, number_of_rows, number_of_columns);
-    cout <<endl;
-    int **M;
+    int number_of_rows_A;
+    int number_of_columns_A;
+    int number_of_rows_B;
+    int number_of_columns_B;
 
     //MENU
-
-    //addMatrix
-    if(compare(argv[1], "addMatrix") == true){
-        M = addMatrix(A, B, number_of_rows, number_of_columns);
-        show_matrix(M, number_of_rows, number_of_columns);
-    }
-    //subtractMatrix
-    else if(compare(argv[1], "subtractMatrix") == true){
-        M = subtractMatrix(A, B, number_of_rows, number_of_columns);
-        show_matrix(M, number_of_rows, number_of_columns);
+    if(compare(argv[1], "help") == true) {
+        help();
     }
     else{
-        goto next;
+        TYPE type;
+        int which_type;
+        cout << "Podaj typ zmiennych jakie bedziesz wporwadzal (1 - INT, 2 - DOUBLE):";
+        cin >> which_type;
+
+        while (which_type != 1 || which_type != 2){
+            if(which_type == 1){
+                type = INT;
+                break;
+            }
+            if(which_type == 2){
+                type = DOUBLE;
+                break;
+            }
+            else
+                cout << "Podano zla wartosc, wpisz ponowanie" << endl;
+            cout << "Podaj typ zmiennych jakie bedziesz wporwadzal (1 - INT, 2 - DOUBLE):";
+            cin >> which_type;
+        }
+
+        //addMatrix
+        if(compare(argv[1], "addMatrix") == true){
+            if(type == INT){
+                int **B{nullptr}, **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                rows_columns(&number_of_rows_B, &number_of_columns_B, 'B');
+                B = allocate_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz B" << endl;
+                show_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                M = addMatrix(A, B, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] B;
+                delete [] M;
+            }
+            else if(type == DOUBLE){
+                double **B{nullptr}, **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                rows_columns(&number_of_rows_B, &number_of_columns_B, 'B');
+                B = allocate_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz B" << endl;
+                show_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                M = addMatrix(A, B, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] B;
+                delete [] M;
+            }
+        }
+            //subtractMatrix
+        else if(compare(argv[1], "subtractMatrix") == true){
+            if(type == INT) {
+                int **B{nullptr}, **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                rows_columns(&number_of_rows_B, &number_of_columns_B, 'B');
+                B = allocate_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Wypelnij macierz" << endl;
+                fill_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz B" << endl;
+                show_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                M = subtractMatrix(A, B, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete[] A;
+                delete[] B;
+                delete[] M;
+            }
+            else if(type == DOUBLE){
+                double **B{nullptr}, **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                rows_columns(&number_of_rows_B, &number_of_columns_B, 'B');
+                B = allocate_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Wypelnij macierz" << endl;
+                fill_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz B" << endl;
+                show_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                M = subtractMatrix(A, B, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete[] A;
+                delete[] B;
+                delete[] M;
+            }
+        }
+            //multiplyMatrix
+        else if(compare(argv[1], "multiplyMatrix") == true) {
+            if(type == INT) {
+                int **B{nullptr}, **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                rows_columns(&number_of_rows_B, &number_of_columns_B, 'B');
+                B = allocate_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Wypelnij macierz" << endl;
+                fill_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz B" << endl;
+                show_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                if (number_of_columns_A == number_of_rows_B) {
+                    M = multiplyMatrix(A, B, number_of_rows_A, number_of_columns_A, number_of_columns_B);
+                    cout << "Macierz wynikowa" << endl;
+                    show_matrix(M, number_of_rows_A, number_of_columns_B);
+                } else {
+                    cout << "Liczba kolumn pierwszej macierzy nie jest rowna liczbie wierszy drugiej macierzy" << endl;
+                }
+
+                delete[] A;
+                delete[] B;
+                delete[] M;
+            }
+            else if(type == DOUBLE) {
+                double **B{nullptr}, **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                rows_columns(&number_of_rows_B, &number_of_columns_B, 'B');
+                B = allocate_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Wypelnij macierz" << endl;
+                fill_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz B" << endl;
+                show_matrix(B, number_of_rows_B, number_of_columns_B);
+
+                if (number_of_columns_A == number_of_rows_B) {
+                    M = multiplyMatrix(A, B, number_of_rows_A, number_of_columns_A, number_of_columns_B);
+                    cout << "Macierz wynikowa" << endl;
+                    show_matrix(M, number_of_rows_A, number_of_columns_B);
+                } else {
+                    cout << "Liczba kolumn pierwszej macierzy nie jest rowna liczbie wierszy drugiej macierzy" << endl;
+                }
+                delete[] A;
+                delete[] B;
+                delete[] M;
+            }
+        }
+            //multiplyByScalar
+        else if(compare(argv[1], "multiplyByScalar") == true){
+            if(type == INT){
+                int **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                int scalar;
+                cout <<  "Podaj skalar:";
+                cin >> scalar;
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                M = multiplyByScalar(A, number_of_rows_A, number_of_columns_A, scalar);
+                cout <<  "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] M;
+            }
+            else if(type == DOUBLE){
+                double **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                double scalar;
+                cout <<  "Podaj skalar:";
+                cin >> scalar;
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                M = multiplyByScalar(A, number_of_rows_A, number_of_columns_A, scalar);
+                cout <<  "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] M;
+            }
+        }
+            //transpozeMatrix
+        else if(compare(argv[1], "transpozeMatrix") == true){
+            if(type == INT){
+                int **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                M = transpozeMatrix(A, number_of_rows_A, number_of_columns_A);
+                cout <<  "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] M;
+            }
+            else if(type == DOUBLE){
+                double **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                M = transpozeMatrix(A, number_of_rows_A, number_of_columns_A);
+                cout <<  "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] M;
+            }
+        }
+            //powerMatrix
+        else if(compare(argv[1], "powerMatrix") == true){
+            if(type == INT){
+                int **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                unsigned int exponent;
+                cout << "Podaj stopien potegi:";
+                cin >> exponent;
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                M = powerMatrix(A, exponent, number_of_rows_A, number_of_columns_A);
+                cout <<  "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] M;
+            }
+            else if(type == DOUBLE){
+                double **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                unsigned int exponent;
+                cout << "Podaj stopien potegi:";
+                cin >> exponent;
+
+                cout << "Macierz A" <<endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                M = powerMatrix(A, exponent, number_of_rows_A, number_of_columns_A);
+                cout <<  "Macierz wynikowa" << endl;
+                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+                delete [] M;
+            }
+        }
+            //determinantMatrix
+        else if(compare(argv[1], "determinantMatrix") == true){
+            if(type == INT){
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                int detA;
+                detA= determinantMatrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "detA = " << detA << endl;
+                delete [] A;
+            }
+            else if(type == DOUBLE){
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                double detA;
+                detA= determinantMatrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "detA = " << detA << endl;
+                delete [] A;
+            }
+        }
+            //matrixIsDiagonal
+        else if(compare(argv[1], "matrixIsDiagonal") == true){
+            if(type == INT){
+                int **M{nullptr};
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                bool diagonal;
+                diagonal = matrixIsDiagonal(A, number_of_rows_A, number_of_columns_A);
+                if (diagonal == true){
+                    cout << "Macierz jest diagonalna" << endl;
+                }
+                else{
+                    cout << "Macierz nie jest diagonalna" << endl;
+                }
+                delete [] A;
+                delete [] M;
+            }
+            else if(type == DOUBLE) {
+                double **M{nullptr};
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                bool diagonal;
+                diagonal = matrixIsDiagonal(A, number_of_rows_A, number_of_columns_A);
+                if (diagonal == true) {
+                    cout << "Macierz jest diagonalna" << endl;
+                } else {
+                    cout << "Macierz nie jest diagonalna" << endl;
+                }
+                delete[] A;
+                delete[] M;
+            }
+        }
+            //swap
+        else if(compare(argv[1], "swap") == true) {
+            if(type == INT){
+                int a_row;
+                int a_column;
+                int b_row;
+                int b_column;
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Podaj wiersz gdzie wystepuje 1 wartosc:";
+                cin >> a_row;
+                cout << "Podaj kolumne gdzie wystepuje 1 wartosc:";
+                cin >> a_column;
+
+                cout << "Podaj wiersz gdzie wystepuje 2 wartosc:";
+                cin >> b_row;
+                cout << "Podaj kolumne gdzie wystepuje 2 wartosc:";
+                cin >> b_column;
+
+                cout << "przed swapem "<<endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                swap(A[a_row - 1][a_column - 1], A[b_row -1][b_column - 1]);
+                cout << "po swapie "<<endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+            }
+            else if(type == DOUBLE){
+                int a_row;
+                int a_column;
+                int b_row;
+                int b_column;
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Podaj wiersz gdzie wystepuje 1 wartosc:";
+                cin >> a_row;
+                cout << "Podaj kolumne gdzie wystepuje 1 wartosc:";
+                cin >> a_column;
+
+                cout << "Podaj wiersz gdzie wystepuje 2 wartosc:";
+                cin >> b_row;
+                cout << "Podaj kolumne gdzie wystepuje 2 wartosc:";
+                cin >> b_column;
+
+                cout << "przed swapem "<<endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                swap(A[a_row - 1][a_column - 1], A[b_row -1][b_column - 1]);
+                cout << "po swapie "<<endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+            }
+
+        }
+            //sortRow
+        else if(compare(argv[1], "sortRow") == true) {
+            if (type == INT) {
+                int row;
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Podaj wiersz do posortowania: " << endl;
+                cin >> row;
+
+                cout << "Przed sortowanmiem" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                sortRow(A[row - 1], number_of_columns_A);
+                cout << "Po sortowaniu" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                delete[] A;
+            }
+            else if (type == DOUBLE) {
+                int row;
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Podaj wiersz do posortowania: " << endl;
+                cin >> row;
+
+                cout << "Przed sortowanmiem" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                sortRow(A[row - 1], number_of_columns_A);
+                cout << "Po sortowaniu" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                delete[] A;
+            }
+        }
+            //sortRowsInMatrix
+        else if(compare(argv[1], "sortRowsInMatrix") == true) {
+            if(type == INT){
+                int **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                sortRowsInMatrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz posortowana" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+            }
+            else if(type == DOUBLE){
+                double **A{nullptr};
+
+                rows_columns(&number_of_rows_A, &number_of_columns_A, 'A');
+                A = allocate_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Wypelnij macierz"<< endl;
+                fill_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                cout << "Macierz A" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+
+                sortRowsInMatrix(A, number_of_rows_A, number_of_columns_A);
+                cout << "Macierz posortowana" << endl;
+                show_matrix(A, number_of_rows_A, number_of_columns_A);
+                delete [] A;
+            }
+        }
+            //bledny parametr
+        else{
+            cout << "Bledny parametr\n" << endl;
+            help();
+        }
     }
-    delete [] M;
-    next:
-    delete [] A;
-    delete [] B;
     return 0;
 }
