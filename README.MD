@@ -1,2 +1,2 @@
 
-Projekt1 nie skończony jeszcze.
+Projekt1 skończony.
