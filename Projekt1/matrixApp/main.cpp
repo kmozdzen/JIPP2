@@ -18,16 +18,16 @@ int main(int arc, char *argv[]){
     }
     else{
         TYPE type;
-        int which_type;
+        char which_type;
         cout << "Podaj typ zmiennych jakie bedziesz wporwadzal (1 - INT, 2 - DOUBLE):";
         cin >> which_type;
 
-        while (which_type != 1 || which_type != 2){
-            if(which_type == 1){
+        while (which_type != 49 || which_type != 50){
+            if(which_type == 49){
                 type = INT;
                 break;
             }
-            if(which_type == 2){
+            else if(which_type == 50){
                 type = DOUBLE;
                 break;
             }
@@ -36,7 +36,6 @@ int main(int arc, char *argv[]){
             cout << "Podaj typ zmiennych jakie bedziesz wporwadzal (1 - INT, 2 - DOUBLE):";
             cin >> which_type;
         }
-
         //addMatrix
         if(compare(argv[1], "addMatrix") == true){
             if(type == INT){
