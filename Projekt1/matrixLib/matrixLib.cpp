@@ -227,7 +227,7 @@ int determinantMatrix(int **A, int number_of_rows_A, int number_of_columns_A){
         detA += sign * A[0][i] * determinantMatrix(M, number_of_rows_A - 1, number_of_columns_A - 1);
         sign = -sign;
     }
-    delete [] M;
+    remove_matrix(M, number_of_rows_A);
     return detA;
 }
 
@@ -265,7 +265,7 @@ double determinantMatrix(double **A, int number_of_rows_A, int number_of_columns
         detA += sign * A[0][i] * determinantMatrix(M, number_of_rows_A - 1, number_of_columns_A - 1);
         sign = -sign;
     }
-    delete [] M;
+    remove_matrix(M, number_of_rows_A);
     return detA;
 }
 
@@ -309,9 +309,9 @@ void swap(double &a, double &b){
 
 void sortRow(int *tab, int number_of_columns){
     for(int i = 0; i < number_of_columns; i++){
-        for(int j = 0; j < number_of_columns; j++){
-            if(tab[j - 1] > tab[j]){
-                swap(tab[j - 1], tab[j]);
+        for(int j = i + 1; j < number_of_columns; j++){
+            if(tab[i] > tab[j]){
+                swap(tab[i], tab[j]);
             }
         }
     }
@@ -319,9 +319,9 @@ void sortRow(int *tab, int number_of_columns){
 
 void sortRow(double *tab, int number_of_columns){
     for(int i = 0; i < number_of_columns; i++){
-        for(int j = 0; j < number_of_columns; j++){
-            if(tab[j - 1] > tab[j]){
-                swap(tab[j - 1], tab[j]);
+        for(int j = i + 1; j < number_of_columns; j++){
+            if(tab[i] > tab[j]){
+                swap(tab[i], tab[j]);
             }
         }
     }

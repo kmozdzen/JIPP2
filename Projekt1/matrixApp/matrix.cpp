@@ -25,7 +25,7 @@ void show_matrix(double **M, int number_of_rows, int number_of_columns){
 void fill_matrix(int **M, int number_of_rows, int number_of_columns){
     for(int i = 0; i < number_of_rows; i++){
         int j = 0;
-        while(j != number_of_rows){
+        while(j != number_of_columns){
             while(true){
                 cin >> M[i][j];
                 if (cin)
@@ -44,7 +44,7 @@ void fill_matrix(int **M, int number_of_rows, int number_of_columns){
 void fill_matrix(double **M, int number_of_rows, int number_of_columns){
     for(int i = 0; i < number_of_rows; i++){
         int j = 0;
-        while(j != number_of_rows){
+        while(j != number_of_columns){
             while(true){
                 cin >> M[i][j];
                 if (cin)
