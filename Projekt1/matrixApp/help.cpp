@@ -6,7 +6,8 @@ using namespace std;
 void help(){
     cout << "Dokumentacja matrixApp\n" << endl;
     cout << "Wpisz odpowiedni parametr np. addMatrix , podaj ilosc wierszy, podaj ilosc kolumn, wpisz liczby do macierzy" << endl;
-    cout << "Przyklad jak powinna wygladac wpisana macierz 3x3:\n 1\n 2\n 3 \n 4\n 5\n 6 \n 7\n 8\n 9" << endl;
+    cout << "Dla macierzy 3x3: \n1 2 3 \n4 5 6 \n7 8 9" << endl;
+    cout << "Wprowadz tak:\n 1\n 2\n 3 \n 4\n 5\n 6 \n 7\n 8\n 9" << endl;
     cout << "\nFunkcje: " << endl;
     cout << "---------addMatrix---------" << endl;
     cout << "Dodawanie 2 macierzy" << endl;
