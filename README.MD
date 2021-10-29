@@ -1,2 +1,2 @@
 
-Projekt1 nie skończony.
+Projekt1 skończony 29.10.
