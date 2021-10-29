@@ -289,7 +289,7 @@ int main(int arc, char *argv[]){
 
                 M = transpozeMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout <<  "Macierz wynikowa" << endl;
-                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                show_matrix(M, number_of_columns_A, number_of_rows_A);
 
                 remove_matrix(A, number_of_rows_A);
                 remove_matrix(M, number_of_rows_A);
@@ -309,7 +309,7 @@ int main(int arc, char *argv[]){
 
                 M = transpozeMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout <<  "Macierz wynikowa" << endl;
-                show_matrix(M, number_of_rows_A, number_of_columns_A);
+                show_matrix(M, number_of_columns_A, number_of_rows_A);
 
                 remove_matrix(A, number_of_rows_A);
                 remove_matrix(M, number_of_rows_A);

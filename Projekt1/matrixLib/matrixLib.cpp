@@ -135,9 +135,9 @@ double **multiplyByScalar(double **A, int number_of_rows_A, int number_of_column
 
 int **transpozeMatrix(int **A, int number_of_rows_A, int number_of_columns_A){
     int **M;
-    M = new int*[number_of_rows_A];
-    for(int i =0; i < number_of_rows_A; i++) {
-        M[i] = new int[number_of_columns_A];
+    M = new int*[number_of_columns_A];
+    for(int i =0; i < number_of_columns_A; i++) {
+        M[i] = new int[number_of_rows_A];
     }
 
     for(int i = 0; i < number_of_columns_A; i++){
@@ -151,9 +151,9 @@ int **transpozeMatrix(int **A, int number_of_rows_A, int number_of_columns_A){
 
 double **transpozeMatrix(double **A, int number_of_rows_A, int number_of_columns_A){
     double **M;
-    M = new double *[number_of_rows_A];
-    for(int i =0; i < number_of_rows_A; i++){
-        M[i] = new double [number_of_columns_A];
+    M = new double *[number_of_columns_A];
+    for(int i =0; i < number_of_columns_A; i++){
+        M[i] = new double [number_of_rows_A];
     }
     for(int i = 0; i < number_of_columns_A; i++){
         for(int j = 0; j < number_of_rows_A; j++){
