@@ -60,23 +60,6 @@ void fill_matrix(double **M, int number_of_rows, int number_of_columns){
     }
 }
 
-
-
-bool compare(char w1[], char w2[]) {
-    int i = 0;
-    while (w1[i] != '\0' || w2[i] != '\0') {
-        if (w1[i] != w2[i]) {
-            break;
-        }
-        i++;
-        if (w1[i] == '\0' && w2[i] == '\0') {
-            return true;
-            break;
-        }
-    }
-    return false;
-}
-
 int **allocate_matrix(int **M, int number_of_rows, int number_of_columns){
     M = new int*[number_of_rows];
     for(int i =0; i < number_of_rows; i++){

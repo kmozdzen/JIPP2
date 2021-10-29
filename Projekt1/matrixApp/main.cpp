@@ -1,5 +1,5 @@
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "matrixLib.h"
 #include "matrix.h"
 #include "help.h"
@@ -13,7 +13,7 @@ int main(int arc, char *argv[]){
     int number_of_columns_B;
 
     //MENU
-    if(compare(argv[1], "help") == true) {
+    if(strcmp(argv[1], "help") == 0) {
         help();
     }
     else{
@@ -37,7 +37,7 @@ int main(int arc, char *argv[]){
             cin >> which_type;
         }
         //addMatrix
-        if(compare(argv[1], "addMatrix") == true){
+        if(strcmp(argv[1], "addMatrix") == 0){
             if(type == INT){
                 int **B{nullptr}, **M{nullptr};
                 int **A{nullptr};
@@ -96,7 +96,7 @@ int main(int arc, char *argv[]){
             }
         }
             //subtractMatrix
-        else if(compare(argv[1], "subtractMatrix") == true){
+        else if(strcmp(argv[1], "subtractMatrix") == 0){
             if(type == INT) {
                 int **B{nullptr}, **M{nullptr};
                 int **A{nullptr};
@@ -155,7 +155,7 @@ int main(int arc, char *argv[]){
             }
         }
             //multiplyMatrix
-        else if(compare(argv[1], "multiplyMatrix") == true) {
+        else if(strcmp(argv[1], "multiplyMatrix") == 0) {
             if(type == INT) {
                 int **B{nullptr}, **M{nullptr};
                 int **A{nullptr};
@@ -223,7 +223,7 @@ int main(int arc, char *argv[]){
             }
         }
             //multiplyByScalar
-        else if(compare(argv[1], "multiplyByScalar") == true){
+        else if(strcmp(argv[1], "multiplyByScalar") == 0){
             if(type == INT){
                 int **M{nullptr};
                 int **A{nullptr};
@@ -272,7 +272,7 @@ int main(int arc, char *argv[]){
             }
         }
             //transpozeMatrix
-        else if(compare(argv[1], "transpozeMatrix") == true){
+        else if(strcmp(argv[1], "transpozeMatrix") == 0){
             if(type == INT){
                 int **M{nullptr};
                 int **A{nullptr};
@@ -313,7 +313,7 @@ int main(int arc, char *argv[]){
             }
         }
             //powerMatrix
-        else if(compare(argv[1], "powerMatrix") == true){
+        else if(strcmp(argv[1], "powerMatrix") == 0){
             if(type == INT){
                 int **M{nullptr};
                 int **A{nullptr};
@@ -362,7 +362,7 @@ int main(int arc, char *argv[]){
             }
         }
             //determinantMatrix
-        else if(compare(argv[1], "determinantMatrix") == true){
+        else if(strcmp(argv[1], "determinantMatrix") == 0){
             if(type == INT){
                 int **A{nullptr};
 
@@ -399,7 +399,7 @@ int main(int arc, char *argv[]){
             }
         }
             //matrixIsDiagonal
-        else if(compare(argv[1], "matrixIsDiagonal") == true){
+        else if(strcmp(argv[1], "matrixIsDiagonal") == 0){
             if(type == INT){
                 int **M{nullptr};
                 int **A{nullptr};
@@ -449,7 +449,7 @@ int main(int arc, char *argv[]){
             }
         }
             //swap
-        else if(compare(argv[1], "swap") == true) {
+        else if(strcmp(argv[1], "swap") == 0) {
             if(type == INT){
                 int a_row;
                 int a_column;
@@ -517,7 +517,7 @@ int main(int arc, char *argv[]){
 
         }
             //sortRow
-        else if(compare(argv[1], "sortRow") == true) {
+        else if(strcmp(argv[1], "sortRow") == 0) {
             if (type == INT) {
                 int row;
                 int **A{nullptr};
@@ -568,7 +568,7 @@ int main(int arc, char *argv[]){
             }
         }
             //sortRowsInMatrix
-        else if(compare(argv[1], "sortRowsInMatrix") == true) {
+        else if(strcmp(argv[1], "sortRowsInMatrix") == 0) {
             if(type == INT){
                 int **A{nullptr};
 
@@ -609,6 +609,7 @@ int main(int arc, char *argv[]){
             cout << "Bledny parametr\n" << endl;
             help();
         }
+
     }
     return 0;
 }
