@@ -270,8 +270,8 @@ double determinantMatrix(double **A, int number_of_rows_A, int number_of_columns
 }
 
 bool matrixIsDiagonal(int **A, int number_of_rows_A, int number_of_columns_A){
-    for(int i = 0; i < number_of_columns_A; i++){
-        for(int j = 0; j < number_of_rows_A; j++){
+    for(int i = 0; i < number_of_rows_A; i++){
+        for(int j = 0; j < number_of_columns_A; j++){
             if(i != j && A[i][j] != 0){
                 goto next;
             }
@@ -283,8 +283,8 @@ bool matrixIsDiagonal(int **A, int number_of_rows_A, int number_of_columns_A){
 }
 
 bool matrixIsDiagonal(double **A, int number_of_rows_A, int number_of_columns_A){
-    for(int i = 0; i < number_of_columns_A; i++){
-        for(int j = 0; j < number_of_rows_A; j++){
+    for(int i = 0; i < number_of_rows_A; i++){
+        for(int j = 0; j < number_of_columns_A; j++){
             if(i != j && A[i][j] != 0){
                 goto next;
             }
