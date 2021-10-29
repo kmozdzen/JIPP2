@@ -15,4 +15,6 @@ double **allocate_matrix(double **M, int number_of_rows, int number_of_columns);
 
 void rows_columns(int *number_of_rows, int *number_of_columns, char name);
 
+void remove_matrix(int **M, int number_of_rows);
+void remove_matrix(double **M, int number_of_rows);
 #endif //PROJEKT1_MATRIX_H

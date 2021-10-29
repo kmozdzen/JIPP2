@@ -82,3 +82,17 @@ void rows_columns(int *number_of_rows, int *number_of_columns, char name){
     cout << "Podaj ilosc kolumn dla macierzy " << name << ":";
     cin >> *number_of_columns;
 }
+
+void remove_matrix(int **M, int number_of_rows){
+    for (int i = 0; i < number_of_rows; i++){
+        delete [] M[i];
+    }
+    delete [] M;
+}
+
+void remove_matrix(double **M, int number_of_rows){
+    for (int i = 0; i < number_of_rows; i++){
+        delete [] M[i];
+    }
+    delete [] M;
+}

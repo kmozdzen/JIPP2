@@ -62,9 +62,9 @@ int main(int arc, char *argv[]){
                 M = addMatrix(A, B, number_of_rows_A, number_of_columns_A);
                 cout << "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] B;
-                delete [] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(B, number_of_rows_B);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE){
                 double **B{nullptr}, **M{nullptr};
@@ -90,9 +90,9 @@ int main(int arc, char *argv[]){
                 M = addMatrix(A, B, number_of_rows_A, number_of_columns_A);
                 cout << "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] B;
-                delete [] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(B, number_of_rows_B);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //subtractMatrix
@@ -121,9 +121,9 @@ int main(int arc, char *argv[]){
                 M = subtractMatrix(A, B, number_of_rows_A, number_of_columns_A);
                 cout << "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete[] A;
-                delete[] B;
-                delete[] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(B, number_of_rows_B);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE){
                 double **B{nullptr}, **M{nullptr};
@@ -149,9 +149,9 @@ int main(int arc, char *argv[]){
                 M = subtractMatrix(A, B, number_of_rows_A, number_of_columns_A);
                 cout << "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete[] A;
-                delete[] B;
-                delete[] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(B, number_of_rows_B);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //multiplyMatrix
@@ -185,9 +185,9 @@ int main(int arc, char *argv[]){
                     cout << "Liczba kolumn pierwszej macierzy nie jest rowna liczbie wierszy drugiej macierzy" << endl;
                 }
 
-                delete[] A;
-                delete[] B;
-                delete[] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(B, number_of_rows_B);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE) {
                 double **B{nullptr}, **M{nullptr};
@@ -217,9 +217,9 @@ int main(int arc, char *argv[]){
                 } else {
                     cout << "Liczba kolumn pierwszej macierzy nie jest rowna liczbie wierszy drugiej macierzy" << endl;
                 }
-                delete[] A;
-                delete[] B;
-                delete[] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(B, number_of_rows_B);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //multiplyByScalar
@@ -244,8 +244,8 @@ int main(int arc, char *argv[]){
                 M = multiplyByScalar(A, number_of_rows_A, number_of_columns_A, scalar);
                 cout <<  "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE){
                 double **M{nullptr};
@@ -267,8 +267,9 @@ int main(int arc, char *argv[]){
                 M = multiplyByScalar(A, number_of_rows_A, number_of_columns_A, scalar);
                 cout <<  "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] M;
+
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //transpozeMatrix
@@ -289,8 +290,9 @@ int main(int arc, char *argv[]){
                 M = transpozeMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout <<  "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] M;
+
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE){
                 double **M{nullptr};
@@ -308,8 +310,9 @@ int main(int arc, char *argv[]){
                 M = transpozeMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout <<  "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] M;
+
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //powerMatrix
@@ -334,8 +337,9 @@ int main(int arc, char *argv[]){
                 M = powerMatrix(A, exponent, number_of_rows_A, number_of_columns_A);
                 cout <<  "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] M;
+
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE){
                 double **M{nullptr};
@@ -357,8 +361,9 @@ int main(int arc, char *argv[]){
                 M = powerMatrix(A, exponent, number_of_rows_A, number_of_columns_A);
                 cout <<  "Macierz wynikowa" << endl;
                 show_matrix(M, number_of_rows_A, number_of_columns_A);
-                delete [] A;
-                delete [] M;
+
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //determinantMatrix
@@ -378,7 +383,8 @@ int main(int arc, char *argv[]){
                 int detA;
                 detA= determinantMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout << "detA = " << detA << endl;
-                delete [] A;
+
+                remove_matrix(A, number_of_rows_A);
             }
             else if(type == DOUBLE){
                 double **A{nullptr};
@@ -395,7 +401,7 @@ int main(int arc, char *argv[]){
                 double detA;
                 detA= determinantMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout << "detA = " << detA << endl;
-                delete [] A;
+                remove_matrix(A, number_of_rows_A);
             }
         }
             //matrixIsDiagonal
@@ -421,8 +427,8 @@ int main(int arc, char *argv[]){
                 else{
                     cout << "Macierz nie jest diagonalna" << endl;
                 }
-                delete [] A;
-                delete [] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
             else if(type == DOUBLE) {
                 double **M{nullptr};
@@ -444,8 +450,8 @@ int main(int arc, char *argv[]){
                 } else {
                     cout << "Macierz nie jest diagonalna" << endl;
                 }
-                delete[] A;
-                delete[] M;
+                remove_matrix(A, number_of_rows_A);
+                remove_matrix(M, number_of_rows_A);
             }
         }
             //swap
@@ -540,7 +546,7 @@ int main(int arc, char *argv[]){
                 cout << "Po sortowaniu" << endl;
                 show_matrix(A, number_of_rows_A, number_of_columns_A);
 
-                delete[] A;
+                remove_matrix(A, number_of_rows_A);
             }
             else if (type == DOUBLE) {
                 int row;
@@ -564,7 +570,7 @@ int main(int arc, char *argv[]){
                 cout << "Po sortowaniu" << endl;
                 show_matrix(A, number_of_rows_A, number_of_columns_A);
 
-                delete[] A;
+                remove_matrix(A, number_of_rows_A);
             }
         }
             //sortRowsInMatrix
@@ -601,7 +607,7 @@ int main(int arc, char *argv[]){
                 sortRowsInMatrix(A, number_of_rows_A, number_of_columns_A);
                 cout << "Macierz posortowana" << endl;
                 show_matrix(A, number_of_rows_A, number_of_columns_A);
-                delete [] A;
+                remove_matrix(A, number_of_rows_A);
             }
         }
             //bledny parametr
