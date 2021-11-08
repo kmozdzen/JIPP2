@@ -75,6 +75,7 @@ public:
 
     const string &getName() const;
 
+    ~Point();
 };
 
 

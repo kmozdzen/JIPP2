@@ -89,7 +89,13 @@
 		<Unit filename="/home/student/CLionProjects/lab5/include/Point.h">
 			<Option target="lab5"/>
 		</Unit>
+		<Unit filename="/home/student/CLionProjects/lab5/include/Pojazd.h">
+			<Option target="lab5"/>
+		</Unit>
 		<Unit filename="/home/student/CLionProjects/lab5/src/Point.cpp">
+			<Option target="lab5"/>
+		</Unit>
+		<Unit filename="/home/student/CLionProjects/lab5/src/Pojazd.cpp">
 			<Option target="lab5"/>
 		</Unit>
 		<Unit filename="/home/student/CLionProjects/lab5/src/main.cpp">

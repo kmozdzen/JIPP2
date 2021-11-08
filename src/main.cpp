@@ -1,5 +1,6 @@
 #include <iostream>
 #include "Point.h"
+#include "Pojazd.h"
 
 using namespace std;
 
@@ -10,6 +11,7 @@ private:
 public:
     TestClass(const int t) : t(t) {
     }
+
 };
 
 int main() {
@@ -44,9 +46,16 @@ int main() {
         p1c.printData();
         p2c.printData();
     }
+    cout << endl;
+    Pojazd pojazd(1, "audi", 4,  "a4");
 
+    pojazd.wypisz_informacje();
+    cout << endl;
+    pojazd.zmien_informacje(2, "kowalski");
+    cout << endl;
+    pojazd.wypisz_informacje();
 
-    cout << "End program" << endl;
+    cout << "\nEnd program" << endl;
 
 
     return 0;

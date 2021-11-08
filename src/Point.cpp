@@ -9,6 +9,11 @@ Point::Point(string name) : name(name) {
     *x = *y = 0;
 }
 
+Point::~Point(){
+    delete x;
+    delete y;
+}
+
 double Point::getX() {
     return *x;
 }

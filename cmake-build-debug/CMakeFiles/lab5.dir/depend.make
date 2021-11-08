@@ -4,6 +4,10 @@
 CMakeFiles/lab5.dir/src/Point.cpp.o: ../include/Point.h
 CMakeFiles/lab5.dir/src/Point.cpp.o: ../src/Point.cpp
 
+CMakeFiles/lab5.dir/src/Pojazd.cpp.o: ../include/Pojazd.h
+CMakeFiles/lab5.dir/src/Pojazd.cpp.o: ../src/Pojazd.cpp
+
 CMakeFiles/lab5.dir/src/main.cpp.o: ../include/Point.h
+CMakeFiles/lab5.dir/src/main.cpp.o: ../include/Pojazd.h
 CMakeFiles/lab5.dir/src/main.cpp.o: ../src/main.cpp
 
