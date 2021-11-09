@@ -5,9 +5,8 @@
 using namespace std;
 
 Pojazd::Pojazd(int numer_rejestrayjny, string nazwa, int ilosc_miejsc, string marka) {
-    tab = new char*[ilosc_miejsc];
+    tab = new string[ilosc_miejsc];
     for (int i = 0; i < ilosc_miejsc; i++){
-        tab[i] = new char[20];
         tab[i] = "puste";
     }
 
@@ -17,7 +16,18 @@ Pojazd::Pojazd(int numer_rejestrayjny, string nazwa, int ilosc_miejsc, string ma
     this->marka = marka;
 }
 
-void Pojazd::wypisz_informacje() {
+Pojazd::Pojazd(Pojazd& pojazd){
+    numer_rejestracyjny = pojazd.numer_rejestracyjny;
+    nazwa = pojazd.nazwa;
+    ilosc_miejsc = pojazd.ilosc_miejsc;
+    marka = pojazd.marka;
+    tab = new string[ilosc_miejsc];
+    for (int i = 0; i < ilosc_miejsc; i++){
+        tab[i] = pojazd.tab[i];
+    }
+}
+
+void Pojazd::wypisz_informacje() const {
     cout<< "numer rejestacyjny: " << this->numer_rejestracyjny << endl;
     cout<< "marka: " << this->marka << endl;
     cout<< "nazwa: " << this->nazwa<< endl;
@@ -32,10 +42,7 @@ void Pojazd::zmien_informacje(int numer_miejsca, char informacje_o_pasazerze[20]
 }
 
 Pojazd::~Pojazd(){
-    //for (int i = 0; i < this->ilosc_miejsc; i++){
-    //    delete [] tab[i];
-   // }
-    //delete [] tab;
+    delete [] tab;
 };
 
 string Pojazd::get_nazwa() {
@@ -57,6 +64,14 @@ string Pojazd::get_marka(){
     return marka;
 }
 
-void Pojazd::set_marka(string marka ){
-    this->marka = marka;
+void Pojazd::wypisz_wersje_oprogramowania(){
+    cout<<"wersja oprogramowania: " << zainstalowana_wersja_oprogramowania << endl;
+}
+
+void Pojazd::zaktualizuj_oprogramowanie(){
+        zainstalowana_wersja_oprogramowania = najnowsza_wersja_oprogramowania;
+}
+
+void Pojazd::opublikujNoweOprogramowanie(string nowa_wersja_oprogramowania){
+    najnowsza_wersja_oprogramowania = nowa_wersja_oprogramowania;
 }

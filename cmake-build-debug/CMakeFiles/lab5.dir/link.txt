@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/lab5.dir/src/main.cpp.o CMakeFiles/lab5.dir/src/Point.cpp.o CMakeFiles/lab5.dir/src/Pojazd.cpp.o  -o lab5 
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/lab5.dir/src/main.cpp.o CMakeFiles/lab5.dir/src/Point.cpp.o CMakeFiles/lab5.dir/src/Pojazd.cpp.o -o lab5.exe -Wl,--out-implib,liblab5.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

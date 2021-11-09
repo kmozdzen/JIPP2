@@ -1,7 +1,3 @@
-//
-// Created by student on 08.11.21.
-//
-
 #ifndef LAB5_POINT_H
 #define LAB5_POINT_H
 

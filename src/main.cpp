@@ -14,8 +14,9 @@ public:
 
 };
 
+string Pojazd::najnowsza_wersja_oprogramowania = "v1.0";
+
 int main() {
-    {
         Point p1("P1"), p2(5, 5, "P2");
 
         cout << "Initial values" << endl;
@@ -45,18 +46,35 @@ int main() {
         p2.printData();
         p1c.printData();
         p2c.printData();
-    }
-    cout << endl;
-    Pojazd pojazd(1, "audi", 4,  "a4");
 
-    pojazd.wypisz_informacje();
     cout << endl;
-    pojazd.zmien_informacje(2, "kowalski");
+    Pojazd pojazd1(1234, "audi", 4,  "a4");
+    pojazd1.wypisz_informacje();
     cout << endl;
-    pojazd.wypisz_informacje();
+    pojazd1.zmien_informacje(2, "jan dzban");
+    pojazd1.wypisz_informacje();
+    cout << endl;
+
+    Pojazd pojazd2(pojazd1);
+    pojazd2.zmien_informacje(4, "mariusz pudzianowski");
+    pojazd2.set_nazwa("bmw");
+    pojazd2.wypisz_informacje();
+
+    /*int cVal = 314;
+    int *const p = &cVal;
+
+    *p = 628;
+
+    int cVal2 = 666;
+    p = &cVal2;*/
+    cout << endl;
+    pojazd1.wypisz_wersje_oprogramowania();
+
+    pojazd1.opublikujNoweOprogramowanie("v2.0");
+    pojazd1.zaktualizuj_oprogramowanie();
+    pojazd1.wypisz_wersje_oprogramowania();
 
     cout << "\nEnd program" << endl;
-
 
     return 0;
 }
