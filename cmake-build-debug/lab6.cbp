@@ -84,7 +84,19 @@
 				</MakeCommands>
 			</Target>
 		</Build>
+		<Unit filename="/home/student/CLionProjects/lab6/include/Node.h">
+			<Option target="lab6"/>
+		</Unit>
+		<Unit filename="/home/student/CLionProjects/lab6/include/Vector.h">
+			<Option target="lab6"/>
+		</Unit>
 		<Unit filename="/home/student/CLionProjects/lab6/main.cpp">
+			<Option target="lab6"/>
+		</Unit>
+		<Unit filename="/home/student/CLionProjects/lab6/src/Node.cpp">
+			<Option target="lab6"/>
+		</Unit>
+		<Unit filename="/home/student/CLionProjects/lab6/src/Vector.cpp">
 			<Option target="lab6"/>
 		</Unit>
 		<Unit filename="/home/student/CLionProjects/lab6/CMakeLists.txt">

@@ -3,4 +3,4 @@ project(lab6)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(lab6 main.cpp)
+add_executable(lab6 main.cpp include/Node.h src/Node.cpp include/Vector.h src/Vector.cpp)
