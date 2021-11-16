@@ -1,6 +1,7 @@
 
 #ifndef LAB6_VECTOR_H
 #define LAB6_VECTOR_H
+#include <iostream>
 
 class Vector {
 private:
@@ -21,17 +22,19 @@ public:
 
     Vector operator-() const;
 
-    Vector operator*(const double scalar) const;
-    Vector &operator*=(const double scalar);
+    Vector operator*(const double &rhs) const;
 
-    Vector operator*(const Vector &rhs) const;
-    Vector &operator*=(const Vector &rhs);
+    double operator*(const Vector &rhs) const;
 
-    Vector operator=(const Vector &rhs) const;
-    Vector &operator==(const Vector &rhs);
+    bool operator==(const Vector &rhs) const;
 
+    friend Vector operator*(const double &lhs, const Vector &rhs);
+    friend std::ostream &operator<<(std::ostream  &lhs, const Vector &rhs);
 
     void print();
 };
+
+Vector operator*(const double &lhs, const Vector &rhs);
+std::ostream &operator<<(std::ostream &lhs, const Vector &rhs);
 
 #endif //LAB6_VECTOR_H

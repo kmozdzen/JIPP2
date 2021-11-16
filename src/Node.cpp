@@ -23,3 +23,7 @@ void Node::updateValue(double x, double y) {
 double pointsDistance(Node a, Node b) {
     return abs(sqrt(pow((b.x - a.x), 2) + pow((b.y - a.y), 2)));
 }
+
+std::ostream &operator<<(std::ostream& lhs, const Node &rhs){
+    return lhs << rhs.x << ", " << rhs.y;
+}

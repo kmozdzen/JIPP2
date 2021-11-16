@@ -2,6 +2,7 @@
 #include <iostream>
 #include <math.h>
 
+
 using namespace std;
 
 
@@ -40,36 +41,26 @@ Vector Vector::operator-() const {
     return {-x, -y};
 }
 
-Vector Vector::operator*(const double scalar) const {
-    return {x * scalar, y * scalar};
+Vector Vector::operator*(const double &rhs) const {
+    return {x * rhs, y * rhs};
 }
 
-Vector& Vector::operator*=(const double scalar) {
-    this->x = this->x * scalar;
-    this->y = this->y * scalar;
-    return *this;
+double Vector::operator*(const Vector &rhs) const {
+    return x * rhs.x + y * rhs.y;
 }
 
-Vector Vector::operator*(const Vector &rhs) const {
-    return {x * rhs.x, y * rhs.y};
+bool Vector::operator==(const Vector &rhs) const {
+    return x==rhs.x && y==rhs.y;
 };
-
-Vector& Vector::operator*=(const Vector &rhs) {
-    this->x = this->x * rhs.x;
-    this->y = this->y * rhs.y;
-    return *this;
-}
-
-Vector Vector::operator=(const Vector &rhs) const {
-    return {x * rhs.x, y * rhs.y};
-};
-
-Vector& Vector::operator==(const Vector &rhs) {
-    this->x = this->x * rhs.x;
-    this->y = this->y * rhs.y;
-    return *this;
-}
 
 void Vector::print() {
     cout << "x: " << x << " y: " << y << endl;
+}
+
+Vector operator*(const double &lhs, const Vector &rhs){
+    return {rhs.x * lhs, rhs.y * lhs};
+}
+
+std::ostream &operator<<(std::ostream  &lhs, const Vector &rhs){
+    return lhs<<"[" << rhs.x << ", " << rhs.y << "]";
 }
