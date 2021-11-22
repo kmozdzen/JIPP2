@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/student/CLionProjects/lab7z/lab7/include/Dziedziczenie.h
+
+/home/student/CLionProjects/lab7z/lab7/include/Polimorfizm.h
+
+/home/student/CLionProjects/lab7z/lab7/main.cpp
+iostream
+-
+include/Dziedziczenie.h
+/home/student/CLionProjects/lab7z/lab7/include/Dziedziczenie.h
+include/Polimorfizm.h
+/home/student/CLionProjects/lab7z/lab7/include/Polimorfizm.h
+
