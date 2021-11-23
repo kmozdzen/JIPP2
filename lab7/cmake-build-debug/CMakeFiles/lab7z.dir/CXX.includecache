@@ -6,15 +6,15 @@
 
 #IncludeRegexTransform: 
 
-/home/student/CLionProjects/lab7z/lab7/include/Dziedziczenie.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab7/JIPP2/lab7/include/Dziedziczenie.h
 
-/home/student/CLionProjects/lab7z/lab7/include/Polimorfizm.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab7/JIPP2/lab7/include/Polimorfizm.h
 
-/home/student/CLionProjects/lab7z/lab7/main.cpp
+/cygdrive/c/Users/Kubinio/CLionProjects/lab7/JIPP2/lab7/main.cpp
 iostream
 -
 include/Dziedziczenie.h
-/home/student/CLionProjects/lab7z/lab7/include/Dziedziczenie.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab7/JIPP2/lab7/include/Dziedziczenie.h
 include/Polimorfizm.h
-/home/student/CLionProjects/lab7z/lab7/include/Polimorfizm.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab7/JIPP2/lab7/include/Polimorfizm.h
 

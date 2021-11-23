@@ -17,8 +17,7 @@ public:
     Circle();
     Circle(double r);
 
-    double pole();
-
+    virtual double getArea();
 };
 
 class Rectangle : public Figure{
@@ -28,6 +27,8 @@ protected:
 public:
     Rectangle();
     Rectangle(double a, double b);
+
+    virtual double getArea();
 };
 
 

@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/lab7z.dir/main.cpp.o CMakeFiles/lab7z.dir/src/Dziedziczenie.cpp.o CMakeFiles/lab7z.dir/src/Polimorfizm.cpp.o  -o lab7z 
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/lab7z.dir/main.cpp.o CMakeFiles/lab7z.dir/src/Dziedziczenie.cpp.o CMakeFiles/lab7z.dir/src/Polimorfizm.cpp.o -o lab7z.exe -Wl,--out-implib,liblab7z.dll.a -Wl,--major-image-version,0,--minor-image-version,0 
