@@ -9,17 +9,15 @@ class Note{
 protected:
     string title;
 public:
-    Note();
-
     string getTitle();
     void setTitle(string title);
 
-    virtual string getContent() = 0;
-    virtual void setContent(string content) = 0;
+    virtual string getContent();
+    virtual void setContent(string content);
 };
 
 class TextNote : public Note {
-protected:
+private:
     string content;
 public:
     TextNote();
@@ -29,7 +27,7 @@ public:
 };
 
 class ListNote : public Note {
-protected:
+private:
     string content;
 public:
     ListNote();
@@ -38,15 +36,15 @@ public:
     void setContent(string content);
 };
 
-class NoteDirector : public TextNote, ListNote{
-protected:
-    vector<TextNote> notesList;
+class NoteDirector {
+private:
+    vector<Note> notesList;
 public:
-    void addNote(TextNote note);
+    void addNote(const Note& note);
     void showNotesList();
-
-    void deleteNote(TextNote note);
-    void editNote(TextNote note);
+    void deleteNote(int notePosition);
+    void clearNotesList();
+    void editNote(int notePosition,const Note& note);
 
 };
 

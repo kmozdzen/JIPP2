@@ -4,8 +4,6 @@
 using namespace std;
 
 //Note
-Note::Note() : title("puste") {}
-
 string Note::getTitle() {
     return title;
 }
@@ -36,16 +34,25 @@ void ListNote::setContent(string content) {
     this->content = content;
 }
 
-void NoteDirector::addNote(TextNote note){
+//NoteDirector
+
+void NoteDirector::addNote(const Note &note){
     notesList.push_back(note);
 }
 
-void NoteDirector::deleteNote(TextNote note) {
+void NoteDirector::clearNotesList() {
     notesList.clear();
 }
 
 void NoteDirector::showNotesList() {
-    for (int i = 0; i < notesList.size(); i++){
+    for (int i = 0; i < int(notesList.size()); i++){
         cout << notesList[i].getContent() << endl;
     }
+}
+void NoteDirector::deleteNote(int notePosition) {
+    notesList.erase(notesList.begin()+notePosition);
+}
+
+void NoteDirector::editNote(int notePosition,const Note &note) {
+    notesList[notePosition] = note;
 }

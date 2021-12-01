@@ -6,19 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/student/CLionProjects/lab8/notes/include/Note.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab8/JIPP2/notes/include/Note.h
 vector
 -
 
-/home/student/CLionProjects/lab8/notes/main.cpp
+/cygdrive/c/Users/Kubinio/CLionProjects/lab8/JIPP2/notes/main.cpp
 iostream
 -
 include/Note.h
-/home/student/CLionProjects/lab8/notes/include/Note.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab8/JIPP2/notes/include/Note.h
 
-/home/student/CLionProjects/lab8/notes/src/Note.cpp
+/cygdrive/c/Users/Kubinio/CLionProjects/lab8/JIPP2/notes/src/Note.cpp
 iostream
 -
 ../include/Note.h
-/home/student/CLionProjects/lab8/notes/include/Note.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab8/JIPP2/notes/include/Note.h
 
