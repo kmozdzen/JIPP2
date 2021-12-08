@@ -1,0 +1,18 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/Zadania/include/Music.h
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/Zadania/main.cpp
+iostream
+-
+list
+-
+include/Music.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/Zadania/include/Music.h
+

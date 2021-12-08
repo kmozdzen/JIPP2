@@ -1,0 +1,3 @@
+C:/Users/Kubinio/CLionProjects/lab9/Zadania/cmake-build-debug-visual-studio/CMakeFiles/lab9.dir
+C:/Users/Kubinio/CLionProjects/lab9/Zadania/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
+C:/Users/Kubinio/CLionProjects/lab9/Zadania/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir

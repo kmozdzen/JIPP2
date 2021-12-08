@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/lab9.dir/main.cpp.o CMakeFiles/lab9.dir/Line.cpp.o CMakeFiles/lab9.dir/Stop.cpp.o -o lab9.exe -Wl,--out-implib,liblab9.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

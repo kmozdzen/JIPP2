@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+C:/Users/Kubinio/CLionProjects/lab9/Zadania/include/Music.h
+list
+-
+iostream
+-
+
+C:/Users/Kubinio/CLionProjects/lab9/Zadania/main.cpp
+iostream
+-
+list
+-
+vector
+-
+include/Music.h
+C:/Users/Kubinio/CLionProjects/lab9/Zadania/include/Music.h
+

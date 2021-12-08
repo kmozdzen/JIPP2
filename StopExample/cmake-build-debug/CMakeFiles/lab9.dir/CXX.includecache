@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/StopExample/Line.cpp
+Line.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/StopExample/Line.h
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/StopExample/Line.h
+iostream
+-
+vector
+-
+Stop.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/StopExample/Stop.h
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab9/StopExample/Stop.h
+iostream
+-
+
