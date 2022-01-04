@@ -1,0 +1,1 @@
+/usr/bin/c++.exe -g -Wl,--enable-auto-import CMakeFiles/lab10_1.dir/main.cpp.o CMakeFiles/lab10_1.dir/src/CsvLib.cpp.o CMakeFiles/lab10_1.dir/src/CsvException.cpp.o -o lab10_1.exe -Wl,--out-implib,liblab10_1.dll.a -Wl,--major-image-version,0,--minor-image-version,0 

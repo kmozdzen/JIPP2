@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab10.1/include/CsvLib.h
+vector
+-
+exception
+-
+
+/cygdrive/c/Users/Kubinio/CLionProjects/lab10.1/src/CsvLib.cpp
+iostream
+-
+../include/CsvLib.h
+/cygdrive/c/Users/Kubinio/CLionProjects/lab10.1/include/CsvLib.h
+fstream
+-
+vector
+-
+
