@@ -1,4 +1,0 @@
-"X:\JetBrains\CLion 2021.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -DCMAKE_DEPENDS_USE_COMPILER=FALSE -G "CodeBlocks - NMake Makefiles" C:\Users\Kubinio\CLionProjects\projekt_koncowy
--- Configuring done
--- Generating done
--- Build files have been written to: C:/Users/Kubinio/CLionProjects/projekt_koncowy/cmake-build-debug-visual-studio
