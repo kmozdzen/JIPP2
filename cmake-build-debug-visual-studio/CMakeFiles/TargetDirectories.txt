@@ -1,0 +1,3 @@
+C:/Users/Kubinio/CLionProjects/projekt_koncowy/cmake-build-debug-visual-studio/CMakeFiles/projekt_koncowy.dir
+C:/Users/Kubinio/CLionProjects/projekt_koncowy/cmake-build-debug-visual-studio/CMakeFiles/edit_cache.dir
+C:/Users/Kubinio/CLionProjects/projekt_koncowy/cmake-build-debug-visual-studio/CMakeFiles/rebuild_cache.dir
